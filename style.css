@@ -1,0 +1,199 @@
+/* Importar una fuente futurista de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+/* Variables CSS para colores */
+:root {
+    --color-background: #1a1a2e; /* Azul oscuro casi negro */
+    --color-primary: #007bff; /* Azul vibrante (puedes cambiarlo a un verde neón #00ff00 o púrpura #8a2be2) */
+    --color-secondary: #e94560; /* Rojo/rosa de acento */
+    --color-text-light: #e0e0e0; /* Gris claro para texto */
+    --color-text-dark: #a0a0a0; /* Gris oscuro para texto secundario */
+    --color-border: #33334d; /* Borde sutil */
+}
+
+body {
+    font-family: 'Share Tech Mono', monospace; /* Fuente principal tipo "código" */
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    overflow-x: hidden; /* Evita scroll horizontal indeseado */
+}
+
+.container {
+    max-width: 900px; /* Ancho máximo del contenedor principal */
+    margin: 40px auto; /* Centra el contenedor y añade margen superior/inferior */
+    background: linear-gradient(145deg, #24243e, #1a1a2e); /* Degradado sutil */
+    padding: 30px 60px; /* **AUMENTADO EL PADDING LATERAL** para más margen interno */
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 0 60px rgba(0, 255, 255, 0.1); /* Brillo neón */
+    border: 1px solid var(--color-border);
+    animation: fadeIn 1s ease-out; /* Animación de aparición */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    text-align: center; /* Centra el contenido del header (imagen, h1, p) */
+    margin-bottom: 40px; /* Margen debajo del header */
+    position: relative;
+}
+
+header img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary), 0 0 30px rgba(0, 255, 255, 0.3);
+    margin-bottom: 15px; /* Margen debajo de la imagen */
+    transition: transform 0.3s ease-in-out;
+}
+
+header img:hover {
+    transform: scale(1.05); /* Efecto hover */
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8em;
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary);
+    margin-top: 10px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.1em;
+    color: var(--color-text-dark);
+    margin-top: 0;
+    margin-bottom: 20px; /* Margen debajo del eslogan */
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed var(--color-border);
+    margin: 40px 0; /* Margen superior e inferior para las líneas divisorias */
+}
+
+.section {
+    margin-bottom: 30px; /* Margen debajo de cada sección principal */
+}
+
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2em;
+    color: var(--color-secondary);
+    text-align: center; /* Centra los subtítulos */
+    margin-bottom: 25px;
+    position: relative;
+    padding-top: 20px; /* Espaciado interno superior para los subtítulos */
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-secondary);
+    margin: 10px auto 0; /* 'auto' para centrar un bloque con ancho fijo */
+    box-shadow: 0 0 10px var(--color-secondary);
+}
+
+p {
+    font-size: 1.05em;
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    text-align: center; /* Centra el contenido de los párrafos */
+    /* **AJUSTE DE ANCHO DE PÁRRAFO** */
+    max-width: 80%; /* Limita el ancho del párrafo al 80% de su contenedor */
+    margin-left: auto; /* Centra el bloque del párrafo */
+    margin-right: auto; /* Centra el bloque del párrafo */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Asegura que los iconos estén centrados */
+    gap: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons img {
+    width: 64px;
+    height: 64px;
+    border-radius: 5px;
+    border: 2px solid var(--color-background);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.social-icons a:hover img {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 0 20px var(--color-primary), 0 0 40px rgba(0, 255, 255, 0.4);
+    border-color: var(--color-primary);
+}
+
+footer {
+    text-align: center; /* Centra el texto del footer */
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px dashed var(--color-border);
+    color: var(--color-text-dark);
+    font-size: 0.9em;
+}
+
+/* Media Queries para Responsividad - Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 20px 30px; /* Ajuste el padding para pantallas medianas */
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    header img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .social-icons img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px 20px; /* Ajuste el padding para pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+}
